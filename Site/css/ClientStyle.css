@@ -1,0 +1,461 @@
+﻿body
+{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.calendarStyle, .calendarCurrentStyle, .bookedCalendarStyle
+{
+    border-width: 2px;
+    border-color: Gray;
+    border-style: ridge;
+    background-color: #F00;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.calendarCurrentStyle
+{
+  background-color: #0F0;
+}
+
+.bookedCalendarStyle
+{
+  background-color: #00F;
+}
+
+.bookedCalendarStyle a
+{
+    color: #FFF;  
+}
+
+.mainPageTitle
+{
+	font-size: 24px;
+	color: #8c8b8b;
+	font-weight:bold;
+}
+
+.mainPageDate
+{
+	font-size: 12px;
+	color: #8c8b8b;
+}
+
+.opened, .closed, .order, .current, .ordered 
+{
+	text-align: center;
+	vertical-align:top;
+	line-height: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.opened a, .closed a, .order a, .current a, .ordered a
+{
+}
+
+.cal-date
+{
+	display: none;
+}
+
+.current .cal-date
+{
+	font-size: 9px;
+	color: #FFF;
+	line-height: 14px;
+	display:block;
+}
+
+.nav-days .glyphicon
+{
+    top: 8px;
+    right: 10px;
+    position: absolute;
+    display: none;
+}
+
+.opened a
+{
+	color: #254666 !important;
+}
+
+.closed a
+{
+	color: #254666 !important;
+}
+
+.current a div
+{
+    background-color: #7da3c9;
+    color: #fafafa;
+}
+
+.order a
+{
+	color: red !important;
+    font-weight: bold !important;
+}
+
+.ordered a
+{
+	color: green !important;
+    font-weight: bold !important;
+}
+
+.ordered.current a .glyphicon
+{
+    display: block;
+}
+
+.current .calendarWhiteLine
+{
+	display: none;
+}
+
+.calendarWhiteLine
+{
+	width:100%; 
+	height:2px; 
+	background-color:#FFF;
+	margin-top: 6px;
+	font-size: 1px; 
+	line-height: 1px; 
+}
+
+.current .calendarWhiteLine2
+{
+	display: none;
+}
+
+.calendarWhiteLine2
+{
+	width:100%; 
+	height:10px; 
+	background-color:#FFF;
+	font-size: 1px; 
+	line-height: 1px; 
+
+}
+
+.calendarLC, .calendarRC
+{
+	width:5px; 
+	height:5px; 
+	background-repeat: no-repeat; 
+	font-size: 1px; 
+	line-height: 5px; 
+}
+
+.calendarLC
+{
+	background-image:url(../images/menu_lc.gif); 
+	float:left; 
+}
+
+.calendarRC
+{
+	background-image:url(../images/menu_rc.gif); 
+	float:right; 
+}
+
+.manu-element
+{
+	color: #50b352;
+	font-size: 12px;
+}
+
+.menu-bg
+{
+	background-color: #e3eaf2;
+}
+
+.menu-control
+{
+	color: #6C6;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 30px;
+}
+.menu-bg td
+{
+	vertical-align: top;
+}
+
+.menu-bg .dish-element.not-available 
+{
+    display: none;
+}
+
+.dish-element
+{
+	width: 100%; 
+	min-height: 80px;
+	background-color: #FFF;
+	color: #000;
+	margin-bottom: 10px;
+    padding: 7px 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dish-element_hover
+{
+	cursor:pointer;
+}
+
+.main-menu-table
+{
+	width: 100%;
+}
+
+.order-title
+{
+	color:#ff9000;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.order-bg
+{
+	background-color: #7da3c9;
+}
+
+.order-bg td
+{
+	vertical-align: top;
+}
+
+.emptybox, .no-garnish
+{
+	width: 200px;
+	height: 82px; 
+	color: #000; 
+	display:none;
+	margin: 2px 2px 10px 2px;
+}
+
+.no-garnish
+{
+	background-color: #FFF;
+}
+
+.DescriptionBlock
+{
+	width: 220px;
+	height: 200px;
+	background-color :#FFF;
+	position: absolute;
+	top: 8px;
+	left: 10px;
+	padding: 4px;
+	border:outset 2px #25519f;	
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 3px;
+}
+
+.navbar-nav > li > a
+{
+    padding: 15px 12px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+.table-dish {
+    margin-bottom: 0 !important;
+}
+
+.table-dish th
+{
+	color:#ff9000;
+    font-weight: normal;
+    border-bottom: 1px solid #fff !important;
+}
+
+.table-dish th
+{
+    padding: 5px 15px !important;
+}
+
+.table-dish td
+{
+    padding: 10px 15px !important;
+}
+
+.container
+{
+    position: relative;
+}
+
+.order_info
+{
+    background: url('../images/total_bg.jpg') no-repeat bottom left;
+    width: 242px;
+    height: 115px;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+    text-align: center;
+}
+
+.order_info p
+{
+    text-align: center;
+    font-size: 24px;
+    color: #25519f;
+    margin-top: 15px;
+}
+
+.navbar-inverse 
+{
+    background-color: #0047a8 !important;
+    border-color: #0047a8 !important;
+    background-image: linear-gradient(to bottom,#0047a8 0,#002355, 100%) !important;
+}
+
+h3
+{
+    color: #25519f !important;
+    font-size: 26px !important;
+}
+
+th.order-dish-type
+{
+    font-size: 16px;
+    color: #fafafa;
+}
+
+th.order-dish-type img
+{
+}
+
+th.order-dish-type span
+{
+    margin-left: 15px;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.navbar-right
+{
+    margin-right: 5px !important;
+}
+
+.nav-days li a {
+    padding: 3px 3px 0 3px !important;
+    position: relative;
+    height: 54px;
+}
+
+.nav-days li a div {
+    padding: 5px 14px;
+    height: 52px;
+}
+
+.price_total {
+    font-size: 20px;
+    width: 170px;
+    text-align: center;
+}
+
+.price_total a {
+    color: #0047a8  !important;
+}
+
+table
+{
+    margin-bottom: 0;
+}
+
+.dish-element {
+    position: relative;
+}
+
+.dish-element .dish-name {
+    line-height: 16px;
+}
+
+.dish-element .supplier {
+    color: #2158b3 !important;
+    font-size: 12px;
+}
+
+.dish-element .available {
+    color: #828282 !important;
+    font-size: 12px;
+}
+
+.order-bg .dish-element .available {
+    display: none;
+}
+
+.dish-element .price {
+    float: right;
+    font-weight: bold;
+}
+
+.dish-element .supplier-line {
+    border-bottom: #c4c4c4 solid 1px;
+    margin: 5px -10px;
+    padding: 0 10px 5px;
+}
+
+.rating {
+    float: right;
+}
+
+.rating i {
+    font-style: normal;
+}
+
+.rating .glyphicon {
+    margin-right: 2px;
+}
+
+.rating .likes {
+    color: mediumseagreen;
+    display: inline-block;
+}
+
+.rating .likes:hover {
+    text-shadow: 1px 1px 0px lightseagreen;
+}
+
+.rating .dislikes {
+    margin-left: 2px;
+    color: lightcoral;
+    display: inline-block;
+}
+
+.rating .dislikes:hover {
+    text-shadow: 1px 1px 0px coral;
+}
+
+.rating .selected {
+    font-weight: bold;
+}
+
+.rating .selected .glyphicon {
+    font-weight: bold !important;
+}
+
+.border-warn {
+    border: 2px solid red !important;
+}
+
+.clear {
+    clear: both;
+}

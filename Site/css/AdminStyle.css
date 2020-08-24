@@ -1,0 +1,203 @@
+body
+{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+td
+{
+    font-size: 12px;
+}
+
+a
+{
+	color: #0000FF;
+}
+
+.admin-list-box
+{
+    font-size: 10px;
+    width: 300px;
+    height: 70px;
+}
+
+.admin-label
+{
+    margin-left: 150px;
+    font-size: small;
+}
+
+.admin-tCount
+{
+    margin-left: 340px;
+    font-size: small;
+}
+
+.admin-tl
+{
+    margin-left: 20px;
+    font-size: small;
+}
+
+.admin-tcost
+{
+    margin-left: 20px;
+    font-size: small;
+}
+
+.admin-item
+{
+    text-align: right;
+    font-size: small;
+    width: 60px;
+}
+
+.defaultCommand
+{	
+	
+}
+
+.menu
+{	
+	background-color: #50b352;	
+	text-align: center;
+	font-family:Tahoma;
+	vertical-align: bottom; 
+	line-height: 14px;	
+}
+
+.menuSelected
+{
+	background-color: #ff9000;	
+}
+
+.menu a
+{
+	color : #FFF;
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;		
+}
+
+.menuWhiteLine1
+{
+	width:100%; 
+	height:2px; 
+	background-color:#FFF;
+	margin-top: 6px;
+	font-size: 1px; 
+	line-height: 1px;	
+}
+
+.menuWhiteLine2
+{
+	width:100%; 
+	height:1px; 
+	background-color:#FFF;
+	font-size: 1px; 
+	line-height: 1px;
+}
+
+.menuWhiteLine3
+{
+	width:100%;	
+	margin-top: 4px;
+	line-height: 0px;
+	font-size: 0px;
+}
+
+.menuLC
+{
+	background-image:url(../images/menu_lc.gif); 
+	float:left;
+	width:5px; 
+	height:5px; 
+	background-repeat: no-repeat; 
+	font-size: 1px; 
+	line-height: 5px; 	 
+}
+
+.menuRC
+{
+	background-image:url(../images/menu_rc.gif); 
+	float:right;
+	width:5px; 
+	height:5px; 
+	background-repeat: no-repeat; 
+	font-size: 1px; 
+	line-height: 5px; 	
+}
+
+.menuBottomLine
+{
+	height: 3px; 
+	line-height: 1px; 
+	font-size:1px;
+}
+
+.errorMessage
+{
+    color: #ff0000;
+}
+
+.okMessage
+{
+    color: #50b352;
+}
+
+.userOrdersTable td {
+    padding: 5px !important;
+    text-align: right;
+}
+
+.userOrdersTable th {
+    padding: 5px !important;
+    text-align: left;
+    font-size: 12px;
+}
+
+.userOrdersTable td.userName {
+    text-align: left;
+}
+
+.userOrdersTable .userName {
+    white-space:nowrap;
+}
+
+.table-user td, .table-user th {
+    padding: 5px !important;
+    vertical-align: middle !important;
+}
+
+.form-inline {
+    margin-bottom: 10px;
+}
+
+.border-warn {
+    border: 2px solid red !important;
+}
+
+.form-control[readonly] {
+    background-color: #fff !important;
+}
+
+.suppliers-upload-list input[type=file] {
+    float: left;
+    margin-right: 15px;
+}
+
+.select-field {
+    margin: 10px 0 10px;
+}
+
+.select-field .name {
+    margin-right: 15px;
+    float: left;
+    margin-top: 5px;
+    font-weight: bold;
+    width: 100px;
+}
+
+.select-field .select {
+    width: 300px;
+}

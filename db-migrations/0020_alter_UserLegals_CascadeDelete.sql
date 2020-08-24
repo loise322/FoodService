@@ -1,0 +1,9 @@
+IF OBJECT_ID('FK_UserLegals_Users') IS NOT NULL
+BEGIN
+	ALTER TABLE UserLegals
+	DROP CONSTRAINT FK_UserLegals_Users
+END
+
+ALTER TABLE UserLegals
+ADD CONSTRAINT FK_UserLegals_Users
+FOREIGN KEY (user_id) REFERENCES dbo.Users(id_user) ON DELETE CASCADE

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E850862-826C-4494-889E-FA8423C35AD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TravelLine.Food.Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calendar\Calendar.cs" />
+    <Compile Include="Calendar\ICalendarService.cs" />
+    <Compile Include="Calendar\IMenuService_menuRepository.cs" />
+    <Compile Include="Configs\ConfigService.cs" />
+    <Compile Include="DeliveryOffice\DeliveryOfficeModel.cs" />
+    <Compile Include="DeliveryOffice\UserConverter.cs" />
+    <Compile Include="Dishes\DishConverter.cs" />
+    <Compile Include="Dishes\DishService.cs" />
+    <Compile Include="DishQuotas\DishQuotaService.cs" />
+    <Compile Include="DishQuotas\IDishQuotaService.cs" />
+    <Compile Include="DishQuotas\DishQuotaModel.cs" />
+    <Compile Include="DishRatings\DishRatingService.cs" />
+    <Compile Include="Reports\Builders\UserOrderTransferReportBuilder.cs" />
+    <Compile Include="Reports\Models\TransferReportItem.cs" />
+    <Compile Include="Suppliers\SupplierModel.cs" />
+    <Compile Include="Suppliers\ISupplierService.cs" />
+    <Compile Include="Suppliers\SupplierConverter.cs" />
+    <Compile Include="Suppliers\SupplierService.cs" />
+    <Compile Include="Import\Models\OperationModel.cs" />
+    <Compile Include="Import\ImportService.cs" />
+    <Compile Include="Import\IImportService.cs" />
+    <Compile Include="Import\Models\ImportModel.cs" />
+    <Compile Include="Import\Models\LegalModel.cs" />
+    <Compile Include="Import\Models\UserModel.cs" />
+    <Compile Include="Import\Models\VacationModel.cs" />
+    <Compile Include="Import\Models\WorkDaysModel.cs" />
+    <Compile Include="Menus\DayStatus.cs" />
+    <Compile Include="Dishes\DishModel.cs" />
+    <Compile Include="DishRatings\DishRatingModel.cs" />
+    <Compile Include="Dishes\DishTypesStrings.cs" />
+    <Compile Include="DishRatings\IDishRatingService.cs" />
+    <Compile Include="Dishes\IDishService.cs" />
+    <Compile Include="DeliveryOffice\IDeliveryOfficeService.cs" />
+    <Compile Include="Calendar\CalendarService.cs" />
+    <Compile Include="Calendar\CalendarItem.cs" />
+    <Compile Include="Helpers\ExcelHelper.cs" />
+    <Compile Include="Menus\IMenuService.cs" />
+    <Compile Include="Menus\MenuService.cs" />
+    <Compile Include="Orders\IOrderService.cs" />
+    <Compile Include="Orders\OrderConverter.cs" />
+    <Compile Include="Orders\OrderItemModel.cs" />
+    <Compile Include="Reports\IReportService.cs" />
+    <Compile Include="Reports\ReportCount.cs" />
+    <Compile Include="Orders\UserOrderPriceModel.cs" />
+    <Compile Include="Reports\Builders\IUserOrderReportBuilder.cs" />
+    <Compile Include="Reports\Models\ComplexReportItem.cs" />
+    <Compile Include="Reports\Models\ReportType.cs" />
+    <Compile Include="Reports\Builders\UserOrderComplexReportBuilder.cs" />
+    <Compile Include="Reports\Builders\UserOrderDailyReportBuilder.cs" />
+    <Compile Include="Orders\UserOrder.cs" />
+    <Compile Include="Library.cs" />
+    <Compile Include="Menus\MenuModel.cs" />
+    <Compile Include="Orders\OrderModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ReportService.cs" />
+    <Compile Include="Orders\OrderService.cs" />
+    <Compile Include="DeliveryOffice\DeliveryOfficeService.cs" />
+    <Compile Include="Legals\ILegalService.cs" />
+    <Compile Include="Legals\LegalService.cs" />
+    <Compile Include="Transfers\ITransferService.cs" />
+    <Compile Include="Transfers\TransferDto.cs" />
+    <Compile Include="Transfers\TransferService.cs" />
+    <Compile Include="Users\IUserService.cs" />
+    <Compile Include="Users\UserConverter.cs" />
+    <Compile Include="Users\UserModel.cs" />
+    <Compile Include="Users\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{6f2f7a46-679a-4c57-9843-c8407924baa5}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

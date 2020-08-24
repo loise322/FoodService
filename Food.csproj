@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A21C0471-6CF3-41BA-B7F5-BF6A122290F3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Food</RootNamespace>
+    <AssemblyName>Food</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\UserOrders.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Controls\AdminMenu.ascx" />
+    <Content Include="Controls\MainMenu.ascx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\default.png" />
+    <Content Include="Images\garnish.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\salat.png" />
+    <Content Include="Images\second_course.png" />
+    <Content Include="Images\soup.png" />
+    <Content Include="Images\total_bg.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\food.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\DateOrder.aspx.cs">
+      <DependentUpon>DateOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DateOrder.aspx.designer.cs">
+      <DependentUpon>DateOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DishEdit.aspx.cs">
+      <DependentUpon>DishEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DishEdit.aspx.designer.cs">
+      <DependentUpon>DishEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DishList.aspx.cs">
+      <DependentUpon>DishList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DishList.aspx.designer.cs">
+      <DependentUpon>DishList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditConfig.aspx.cs">
+      <DependentUpon>EditConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditConfig.aspx.designer.cs">
+      <DependentUpon>EditConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Expense.aspx.cs">
+      <DependentUpon>Expense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Expense.aspx.designer.cs">
+      <DependentUpon>Expense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserOrders.aspx.cs">
+      <DependentUpon>UserOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserOrders.aspx.designer.cs">
+      <DependentUpon>UserOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FridgeOrderList.aspx.cs">
+      <DependentUpon>FridgeOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FridgeOrderList.aspx.designer.cs">
+      <DependentUpon>FridgeOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MakeMenu.aspx.cs">
+      <DependentUpon>MakeMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MakeMenu.aspx.designer.cs">
+      <DependentUpon>MakeMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MakeTypeDish.aspx.cs">
+      <DependentUpon>MakeTypeDish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MakeTypeDish.aspx.designer.cs">
+      <DependentUpon>MakeTypeDish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderListRep.aspx.cs">
+      <DependentUpon>OrderListRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderListRep.aspx.designer.cs">
+      <DependentUpon>OrderListRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderPrintVersion.aspx.cs">
+      <DependentUpon>OrderPrintVersion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderPrintVersion.aspx.designer.cs">
+      <DependentUpon>OrderPrintVersion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendEmail.aspx.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendEmail.aspx.designer.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeamEdit.aspx.cs">
+      <DependentUpon>TeamEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeamEdit.aspx.designer.cs">
+      <DependentUpon>TeamEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeamList.aspx.cs">
+      <DependentUpon>TeamList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeamList.aspx.designer.cs">
+      <DependentUpon>TeamList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UsersNoOrder.aspx.cs">
+      <DependentUpon>UsersNoOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UsersNoOrder.aspx.designer.cs">
+      <DependentUpon>UsersNoOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminHeader.ascx.cs">
+      <DependentUpon>AdminHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminHeader.ascx.designer.cs">
+      <DependentUpon>AdminHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminMenu.ascx.cs">
+      <DependentUpon>AdminMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminMenu.ascx.designer.cs">
+      <DependentUpon>AdminMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateOrder.ascx.cs">
+      <DependentUpon>DateOrder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateOrder.ascx.designer.cs">
+      <DependentUpon>DateOrder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Groups.ascx.cs">
+      <DependentUpon>Groups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Groups.ascx.designer.cs">
+      <DependentUpon>Groups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainMenu.ascx.cs">
+      <DependentUpon>MainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainMenu.ascx.designer.cs">
+      <DependentUpon>MainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuSelector.ascx.cs">
+      <DependentUpon>MenuSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuSelector.ascx.designer.cs">
+      <DependentUpon>MenuSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderCalendar.ascx.cs">
+      <DependentUpon>OrderCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderCalendar.ascx.designer.cs">
+      <DependentUpon>OrderCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderListOnFridge.ascx.cs">
+      <DependentUpon>OrderListOnFridge.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderListOnFridge.ascx.designer.cs">
+      <DependentUpon>OrderListOnFridge.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Calendar.cs" />
+    <Compile Include="Core\Config.cs" />
+    <Compile Include="Core\Dish.cs" />
+    <Compile Include="Core\Helpers\ExcelHelper.cs" />
+    <Compile Include="Core\Helpers\LdapHelper.cs" />
+    <Compile Include="Core\Library.cs" />
+    <Compile Include="Core\Menu.cs" />
+    <Compile Include="Core\Order.cs" />
+    <Compile Include="Core\Reports.cs" />
+    <Compile Include="Core\User.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\DateOrder.ascx" />
+    <Content Include="Controls\Groups.ascx" />
+    <Content Include="Controls\OrderCalendar.ascx" />
+    <Content Include="Controls\OrderListOnFridge.ascx" />
+    <Content Include="css\ClientStyle.css" />
+    <Content Include="js\main.js" />
+    <Content Include="Master\Admin.Master" />
+    <Content Include="test.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\DateOrder.aspx" />
+    <Content Include="Admin\DishEdit.aspx" />
+    <Content Include="Admin\DishList.aspx" />
+    <Content Include="Admin\EditConfig.aspx" />
+    <Content Include="Admin\Expense.aspx" />
+    <Content Include="Admin\FridgeOrderList.aspx" />
+    <Content Include="Admin\MakeMenu.aspx" />
+    <Content Include="Admin\MakeTypeDish.aspx" />
+    <Content Include="Admin\OrderListRep.aspx" />
+    <Content Include="Admin\OrderPrintVersion.aspx" />
+    <Content Include="Admin\SendEmail.aspx" />
+    <Content Include="Admin\TeamEdit.aspx" />
+    <Content Include="Admin\TeamList.aspx" />
+    <Content Include="Admin\UserEdit.aspx" />
+    <Content Include="Admin\UserList.aspx" />
+    <Content Include="Admin\UsersNoOrder.aspx" />
+    <Content Include="App_Data\Global.xml" />
+    <Content Include="App_Data\DishDB.mdb">
+    </Content>
+    <Content Include="Controls\AdminHeader.ascx" />
+    <Content Include="Controls\MenuSelector.ascx" />
+    <Content Include="css\AdminStyle.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\big\wyxhofdz.jpg" />
+    <Content Include="Images\menu_lc.gif" />
+    <Content Include="Images\menu_rc.gif" />
+    <Content Include="Images\no_garnir.png" />
+    <Content Include="Images\small\wyxhofdz.jpg" />
+    <Content Include="js\admin.js" />
+    <Content Include="js\defaultPage.js" />
+    <Content Include="js\mail.js" />
+    <Content Include="Master\Main.Master" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61977</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:100/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

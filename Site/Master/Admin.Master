@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="TravelLine.Food.Site.Master.Admin" %>
+
+<%@ Register Src="~/Controls/MainMenu.ascx" TagName="MainMenu" TagPrefix="uc" %>
+<%@ Register Src="~/Controls/AdminMenu.ascx" TagName="AdminMenu" TagPrefix="am" %>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head runat="server">
+    <title>Заказ обедов - Администрирование</title>
+	<link rel="icon" type="image/png" href="/images/favicon.ico"/>
+    <link rel="stylesheet" href="~/css/AdminStyle.css" type="text/css" />
+    <script type="text/javascript" src="../js/admin.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="~/Content/bootstrap.min.css?v=2" rel="stylesheet"/>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        
+    <script type="text/javascript" src="/Scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="/Scripts/datepicker-ru.js"></script>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <uc:MainMenu ID="MainMenu" runat="server"></uc:MainMenu>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="padding-top: 50px;">
+                    <am:AdminMenu runat="server" />
+                </div>
+                <div class="col-md-9">    
+                    <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>  
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

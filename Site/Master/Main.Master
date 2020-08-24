@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="TravelLine.Food.Site.Master.Main" %>
+<%@ Register Src="~/Controls/MainMenu.ascx" TagName="MainMenu" TagPrefix="uc" %>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head runat="server">
+    <title>Заказ обедов</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="/images/favicon.ico"/>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css?v=7" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/ClientStyle.css?v=1.1" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <link href="/css/jquery-ui-css.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Scripts/datepicker-ru.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/defaultPage.js?v=8"></script>
+    <script type="text/javascript" src="js/rating.js?v=1"></script>
+</head>
+<body>
+    <form runat="server">
+        <uc:MainMenu ID="MainMenu" runat="server"></uc:MainMenu>
+        
+        <div style="padding-top: 10px;">
+            <asp:ContentPlaceHolder ID="phContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
