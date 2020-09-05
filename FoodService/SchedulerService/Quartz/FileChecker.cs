@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 using Quartz;
-using SchedulerService.Services.Import;
+using SchedulerService.Configs;
 using TravelLine.Food.Core.Import.Models;
 using TravelLine.Food.Domain.Legals;
 using TravelLine.Food.Domain.Users;
@@ -18,17 +20,17 @@ namespace SchedulerService.Quartz
 {
     public class FileChecker : IJob
     {
-        private readonly FoodContext _context;
-        private readonly IImportService _importService;
+        private readonly QuartzConfiguration _configuration;
+        private readonly HttpClient _httpClient;
 
-        public FileChecker( FoodContext context, IImportService importService )
+        public FileChecker( QuartzConfiguration configuration, HttpClient httpClient )
         {
-            _context = context;
-            _importService = importService;
+            _httpClient = httpClient;
+            _configuration = configuration;
         }
         public async Task Execute( IJobExecutionContext context )
         {
-            string pathDirectory = @"E:\checkScheduler";
+            string pathDirectory = _configuration.PathDirectory;
             string[] fileEntries = Directory.GetFiles( pathDirectory );
 
             var _xmlSerializer = new XmlSerializer( typeof( ImportModel ) );
@@ -36,30 +38,19 @@ namespace SchedulerService.Quartz
             {
                 using ( var fs = new FileStream( item, FileMode.Open ) )
                 {
-                    _importService.ImportFrom1c(fs);
+                    var model = ( ImportModel )_xmlSerializer.Deserialize( fs );
+                    if (model.Operation.Date.Day == DateTime.Now.Day)
+                    {
+                        PostXmlPath( item );
+                    }
                 }
             }
         }
 
-        private List<User> ImportUsers( UserModel[] models )
+        public async Task PostXmlPath(string path)
         {
-            List<User> users = _context.Users.AsNoTracking().ToList();
-            foreach ( UserModel model in models )
-            {
-                if ( !users.Any( u => u.ExternalId == model.Id ) )
-                {
-                    User user = users.FirstOrDefault( u => u.Name.Replace( " ", "" ).ToLower() == model.FullName.Replace( " ", "" ).ToLower() );
-                    if ( user != null )
-                    {
-                        user.Code = model.Code;
-                        user.ExternalId = model.Id;
-
-                        _context.Users.AddOrUpdate( user );
-                        _context.SaveChanges();
-                    }
-                }
-            }
-            return users;
+            HttpContent httpContent = new StringContent( JsonConvert.SerializeObject( path ), Encoding.UTF8 );
+            _httpClient.PostAsync( "api/import", httpContent );
         }
     }
 }

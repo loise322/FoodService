@@ -22,9 +22,9 @@ namespace TravelLine.Food.WebApi.Controllers
 
         [HttpGet]
         [Route( "from1c" )]
-        public IHttpActionResult Import()
+        public IHttpActionResult Import(string path)
         {
-            using ( var fs = new FileStream( @"c:\dev\5ba0e401-ab20-406f-9aba-2bf573b4d715.XML", FileMode.Open ) )
+            using ( var fs = new FileStream( path, FileMode.Open ) )
             {
                 _importService.ImportFrom1c( fs );
             }

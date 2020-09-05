@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
 using Quartz.Impl;
+using SchedulerService.Configs;
 
 namespace SchedulerService.Quartz
 {
@@ -13,6 +14,8 @@ namespace SchedulerService.Quartz
     {
         public static async void Start( IServiceProvider serviceProvider )
         {
+            QuartzConfiguration quartzConfiguration = serviceProvider.GetService<QuartzConfiguration>();
+
             IScheduler scheduler = await StdSchedulerFactory.GetDefaultScheduler();
             scheduler.JobFactory = serviceProvider.GetService<JobFactory>();
             await scheduler.Start();
@@ -21,9 +24,10 @@ namespace SchedulerService.Quartz
             ITrigger trigger = TriggerBuilder.Create()
                 .WithIdentity( "DbTestTrigger", "default" )
                 .StartNow()
-                .WithSimpleSchedule( x => x
-                 .WithIntervalInSeconds( 40 )
-                 .RepeatForever()  )
+                .WithDailyTimeIntervalSchedule(x => x
+                  .WithIntervalInHours( 24 )
+                  .OnEveryDay()
+                  .StartingDailyAt( TimeOfDay.HourAndMinuteOfDay( quartzConfiguration.TimeExecution.Hours, quartzConfiguration.TimeExecution.Minutes ) ) )
                 .Build();
 
             await scheduler.ScheduleJob( jobDetail, trigger );

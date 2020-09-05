@@ -215,6 +215,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configs\QuartzConfiguration.cs" />
+    <Compile Include="Configs\DailyTimeExecution.cs" />
     <Compile Include="Installer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -233,8 +235,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Import\IImportService.cs" />
-    <Compile Include="Services\Import\ImportService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

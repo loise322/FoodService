@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using System.Net.Http;
 using System.ServiceProcess;
 using System.Threading;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
+using SchedulerService.Configs;
 using SchedulerService.Quartz;
-using SchedulerService.Services.Import;
 using TravelLine.Food.Infrastructure;
 
 namespace SchedulerService
@@ -24,12 +25,20 @@ namespace SchedulerService
 
         protected override void OnStart( string[] args )
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["DishDBConnectionString"].ConnectionString;
+
             ServiceProvider serviceProvider = new ServiceCollection()
-                .AddScoped<FoodContext>( _ => new FoodContext( connectionString ) )
-                .AddScoped<IImportService, ImportService>()
                 .AddTransient<JobFactory>()
                 .AddScoped<FileChecker>()
+                .AddScoped<HttpClient>( _ => new HttpClient { BaseAddress = new Uri( "http://localhost:32213/" ) } )
+                .AddScoped<QuartzConfiguration>( _ => new QuartzConfiguration
+                {
+                    PathDirectory = @"E:\checkScheduler",
+                    TimeExecution = new DailyTimeExecution 
+                    {
+                        Hours = 8,
+                        Minutes = 0
+                    }
+                } )
                 .BuildServiceProvider();
 
             WorkTimeScheduler.Start(serviceProvider);
