@@ -20,15 +20,11 @@ namespace TravelLine.Food.WebApi.Controllers
             _importService = importService;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route( "from1c" )]
-        public IHttpActionResult Import(string path)
+        public IHttpActionResult Import(FileStream file)
         {
-            using ( var fs = new FileStream( path, FileMode.Open ) )
-            {
-                _importService.ImportFrom1c( fs );
-            }
-
+            _importService.ImportFrom1c( file );
             return Ok();
         }
     }

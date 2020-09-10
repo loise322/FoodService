@@ -10,6 +10,8 @@ namespace SchedulerService.Configs
     {
         public string PathDirectory { get; set; }
 
+        public string ApiUrl { get; set; }
+
         public DailyTimeExecution TimeExecution { get; set; }
     }
 }

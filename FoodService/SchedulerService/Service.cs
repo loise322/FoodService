@@ -33,6 +33,7 @@ namespace SchedulerService
                 .AddScoped<QuartzConfiguration>( _ => new QuartzConfiguration
                 {
                     PathDirectory = @"E:\checkScheduler",
+                    ApiUrl = "api/import/from1c",
                     TimeExecution = new DailyTimeExecution 
                     {
                         Hours = 8,

@@ -11,10 +11,6 @@ using Newtonsoft.Json;
 using Quartz;
 using SchedulerService.Configs;
 using TravelLine.Food.Core.Import.Models;
-using TravelLine.Food.Domain.Legals;
-using TravelLine.Food.Domain.Users;
-using TravelLine.Food.Domain.WorkTimes;
-using TravelLine.Food.Infrastructure;
 
 namespace SchedulerService.Quartz
 {
@@ -33,24 +29,21 @@ namespace SchedulerService.Quartz
             string pathDirectory = _configuration.PathDirectory;
             string[] fileEntries = Directory.GetFiles( pathDirectory );
 
-            var _xmlSerializer = new XmlSerializer( typeof( ImportModel ) );
             foreach ( string item in fileEntries )
             {
-                using ( var fs = new FileStream( item, FileMode.Open ) )
+                DateTime CreationTime = File.GetCreationTime( item ); 
+                if (CreationTime.Date == DateTime.Now.Date)
                 {
-                    var model = ( ImportModel )_xmlSerializer.Deserialize( fs );
-                    if (model.Operation.Date.Day == DateTime.Now.Day)
-                    {
-                        PostXmlPath( item );
-                    }
-                }
+                    var fs = new FileStream( item, FileMode.Open );
+                    PostRequestFileStream( fs );
+                } 
             }
         }
 
-        public async Task PostXmlPath(string path)
+        public async Task PostRequestFileStream(FileStream file)
         {
-            HttpContent httpContent = new StringContent( JsonConvert.SerializeObject( path ), Encoding.UTF8 );
-            _httpClient.PostAsync( "api/import", httpContent );
+            HttpContent httpContent = new StreamContent( file );
+            _httpClient.PostAsync( _configuration.ApiUrl, httpContent);
         }
     }
 }
