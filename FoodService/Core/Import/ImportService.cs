@@ -23,11 +23,13 @@ namespace TravelLine.Food.Core.Import
             _workTimeRepository = workTimeRepository;
         }
 
-        public void ImportFrom1c( Stream input )
+        public void ImportFrom1c( string input )
         {
             var _xmlSerializer = new XmlSerializer( typeof( ImportModel ) );
 
-            var model = ( ImportModel )_xmlSerializer.Deserialize( input );
+            TextReader reader = new StringReader( input );
+
+            var model = ( ImportModel )_xmlSerializer.Deserialize( reader );
 
             List<User> users = ImportUsers( model.Operation.Users );
 

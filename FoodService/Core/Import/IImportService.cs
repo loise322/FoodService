@@ -4,6 +4,6 @@ namespace TravelLine.Food.Core.Import
 {
     public interface IImportService
     {
-        void ImportFrom1c( Stream input );
+        void ImportFrom1c( string input );
     }
 }

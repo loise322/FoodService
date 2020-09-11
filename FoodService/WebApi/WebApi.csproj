@@ -158,6 +158,10 @@
       <Project>{5DD1AE33-39B5-47C5-BCCC-50B602CDDE53}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SchedulerService\SchedulerService.csproj">
+      <Project>{DC0B9C06-F5E0-475A-B97D-7AC21CA7A116}</Project>
+      <Name>SchedulerService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
