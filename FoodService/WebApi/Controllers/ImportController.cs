@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Web.Http;
+using SchedulerService.Models;
 using TravelLine.Food.Core.Calendar;
 using TravelLine.Food.Core.Dishes;
 using TravelLine.Food.Core.Import;
@@ -22,9 +23,9 @@ namespace TravelLine.Food.WebApi.Controllers
 
         [HttpPost]
         [Route( "from1c" )]
-        public IHttpActionResult Import(FileStream file)
+        public IHttpActionResult Import(ImportFrom1cRequest file)
         {
-            _importService.ImportFrom1c( file );
+            _importService.ImportFrom1c( file.Content );
             return Ok();
         }
     }
