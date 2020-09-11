@@ -45,7 +45,7 @@ namespace SchedulerService.Quartz
 
         public async Task PostRequest(ImportFrom1cRequest file)
         {
-            HttpContent httpContent = new StringContent( JsonConvert.SerializeObject(file), Encoding.UTF8 );
+            HttpContent httpContent = new StringContent( JsonConvert.SerializeObject(file), Encoding.UTF8, "application/json" );
             _httpClient.PostAsync( _configuration.ApiUrl, httpContent);
         }
     }
